@@ -1,6 +1,4 @@
 def count_minus(x):
-    count = 0
-    for i in range(len(x)):
-        count += x[i].count('-')
-    return count
-print(count_minus(input().split()))
+    return sum([i.count('-') for i in x.split()])
+    #return len([i for i in num if i < 0]) must int input 
+print(count_minus(input()))

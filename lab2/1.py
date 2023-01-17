@@ -1,12 +1,5 @@
-lists = []
 lists = [int(digit) for digit in input().split()]
-for x in range(len(lists)):
-    for y in range(len(lists)):
-        if lists[x] < lists[y]:
-            temp = lists[y]
-            lists[y] = lists[x]
-            lists[x] = temp
-
+lists.sort()
 for i in range(len(lists)):
     if lists[0] == 0:
         temp = lists[0]
