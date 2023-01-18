@@ -10,5 +10,3 @@ def day_of_year(day,month,year):
         return days + day + 1
     else:
         return days + day
-
-print(day_of_year(31,12,2004))
