@@ -16,13 +16,12 @@ def day_in_year(year):
     if is_leap(year):
         return 366
     else:
-        return 355
+        return 365
 
 def date_diff(x,y):
     before = [int(i) for i in x.split('-')]
     after  = [int(i) for i in y.split('-')]
-    diff = day_of_year(after[0],after[1],after[2]) - day_of_year(before[0],before[1],before[2]) + ((after[2] - before[2]) * 365) + 1
+    diff = day_of_year(after[0],after[1],after[2]) - day_of_year(before[0],before[1],before[2])+ 1
     for i in range(before[2],after[2]):
-        if is_leap(i):
-            diff += 1
+        diff += day_in_year(i)
     return diff

@@ -28,8 +28,7 @@ def date_diff(x,y):
     elif (before[1] == 2 and not is_leap(before[2]) and before[0] == 29) or (after[1] == 2 and not is_leap(after[2]) and after[0] == 29):
         return -1
     else:
-        diff = day_of_year(after[0],after[1],after[2]) - day_of_year(before[0],before[1],before[2]) + ((after[2] - before[2]) * 365) + 1
+        diff = day_of_year(after[0],after[1],after[2]) - day_of_year(before[0],before[1],before[2]) + 1
         for i in range(before[2],after[2]):
-            if is_leap(i):
-                diff += 1
+            diff = day_in_year(i)
         return diff
