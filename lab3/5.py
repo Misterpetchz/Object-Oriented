@@ -16,7 +16,7 @@ def update_records(dictionary_record, id, property, value):
               elif (property == 'tracks' and dictionary_record[id][property] != None):
                      dictionary_record[id]['tracks'].append(value)
               elif (property != 'tracks'):
-                     dictionary_record[id][property] = value
+                     dictionary_record[id].update({property : value})
        return dictionary_record
 
 print(update_records(record_collection, 5439,'tracks', '2000'))

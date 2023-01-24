@@ -1,5 +1,8 @@
 def add_score(subject_score, student, subject, score):
-    subject_score[student][subject] = score
+    if subject_score.get(student):
+        subject_score[student].update({subject : score})
+    else :
+        subject_score.update({student : {subject : score}})
     return subject_score
 
 def calc_average_score(score):
